@@ -1,0 +1,14 @@
+/* styles/Content.module.css */
+.container {
+    padding-left: 13px;
+    padding-right: 13px;
+    text-align: left;
+}
+
+.title {
+    font-size: 20px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-weight: 700;
+    color: #000;
+}

@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 13px;
+    height: 60px;
+    align-items: center;
+    background-color: #fff;
+}
+
+.leftContainer {
+    display: flex;
+    align-items: center;
+}
+
+.leftArrowButton {
+    margin-right: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}

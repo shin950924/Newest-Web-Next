@@ -1,0 +1,24 @@
+/* components/FeedItem.module.css */
+.feedItem {
+    border: 1px solid #f3f4f6;
+    border-radius: 8px;
+    margin: 5px 0px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.profileContainer {
+    cursor: pointer;
+}
+
+.contentContainer {
+    padding: 16px;
+    background-color: '#000';
+}
+
+.openBrowser {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 16px 25px;
+}

@@ -1,0 +1,16 @@
+.menuItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.countText {
+    color: #6B7280;
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}

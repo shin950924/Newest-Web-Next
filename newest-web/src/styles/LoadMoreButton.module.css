@@ -1,0 +1,29 @@
+/* LoadMoreButton.module.css */
+.button {
+    margin-top: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    width: calc(100% - 50px);
+
+    border-radius: 5px;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.button:hover {
+    background-color: #f3f4f6;
+}
+
+.text {
+    color: #4b5563;
+    font-size: 13px;
+    font-weight: 600;
+}

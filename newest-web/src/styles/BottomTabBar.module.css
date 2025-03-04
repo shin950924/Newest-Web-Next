@@ -1,0 +1,94 @@
+/* BottomTabBar.module.css */
+
+/* 바텀 탭 바 전체 영역 (nav) */
+.nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: #fff;
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 16px;
+    /* Tailwind py-2 px-4 → 8px,16px */
+    z-index: 10;
+}
+
+/* 일반 버튼 기본 스타일 */
+.btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 12px;
+    /* Tailwind p-3 → 12px */
+    flex: 1;
+    color: #4b5563;
+    /* text-gray-600 */
+    transition: all 0.2s ease;
+    /* transition-all duration-200 */
+}
+
+/* Create 버튼 (isCreate=true) 전용 스타일 */
+.btnCreate {
+    background-color: #2563eb;
+    /* bg-blue-600 */
+    margin-top: -32px;
+    /* -mt-8 → -2rem */
+    border-radius: 9999px;
+    /* rounded-full */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    /* shadow-lg */
+    color: #fff;
+    z-index: 10;
+}
+
+/* Create 버튼 hover, active 효과 (Tailwind: hover:bg-blue-700, active:bg-blue-800) */
+.btnCreate:hover {
+    background-color: #1d4ed8;
+}
+
+.btnCreate:active {
+    background-color: #1e40af;
+}
+
+/* 활성화된 탭 (Tailwind: text-blue-600 bg-blue-50 rounded-xl) */
+.btnActive {
+    color: #3b82f6;
+    /* text-blue-600 */
+    background-color: #eff6ff;
+    /* bg-blue-50 */
+    border-radius: 12px;
+    /* rounded-xl (대략 0.75rem) */
+}
+
+/* 아이콘 크기 */
+.iconCreate {
+    width: 2rem;
+    /* w-8 */
+    height: 2rem;
+}
+
+.iconDefault {
+    width: 1.75rem;
+    /* w-7 (28px) */
+    height: 1.75rem;
+}
+
+/* 라벨 (Tailwind: text-xs, mt-1, font-medium) */
+.label {
+    font-size: 0.75rem;
+    /* 12px */
+    margin-top: 0.25rem;
+    /* 4px */
+    font-weight: 500;
+}
+
+/* Create 버튼에는 라벨 숨김 (Tailwind: hidden) */
+.labelHidden {
+    display: none;
+}

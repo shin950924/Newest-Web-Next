@@ -1,0 +1,30 @@
+.relatedArticle {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    border-radius: 12px;
+    background-color: #f9fafb;
+    border: 1px solid #f3f4f6;
+    padding-bottom: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px;
+    margin-bottom: 16px;
+}
+
+.headerText {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+.articlesContainer {
+    overflow-x: auto;
+}
+
+.bottomSpacer {
+    height: 25px;
+}
