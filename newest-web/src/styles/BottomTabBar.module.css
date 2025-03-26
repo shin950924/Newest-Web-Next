@@ -1,94 +1,91 @@
 /* BottomTabBar.module.css */
 
-/* 바텀 탭 바 전체 영역 (nav) */
+/* Navigation bar container */
 .nav {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-    background-color: #fff;
-    border-top: 1px solid #e5e7eb;
-    padding: 8px 16px;
-    /* Tailwind py-2 px-4 → 8px,16px */
-    z-index: 10;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  margin: 0 auto;
+  padding: 8px 16px;
+  align-items: center;
+  background-color: #fff;
+  border-top: 1px solid #e5e7eb;
 }
 
-/* 일반 버튼 기본 스타일 */
+/* Default tab button */
 .btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    padding: 12px;
-    /* Tailwind p-3 → 12px */
-    flex: 1;
-    color: #4b5563;
-    /* text-gray-600 */
-    transition: all 0.2s ease;
-    /* transition-all duration-200 */
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  color: #4b5563;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.2s ease;
 }
 
-/* Create 버튼 (isCreate=true) 전용 스타일 */
+/* Create button (center button) */
 .btnCreate {
-    background-color: #2563eb;
-    /* bg-blue-600 */
-    margin-top: -32px;
-    /* -mt-8 → -2rem */
-    border-radius: 9999px;
-    /* rounded-full */
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    /* shadow-lg */
-    color: #fff;
-    z-index: 10;
+  width: 60px;
+  height: 60px;
+  flex: none;
+  border-radius: 50%;
+  background-color: #2563eb;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -32px;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Create 버튼 hover, active 효과 (Tailwind: hover:bg-blue-700, active:bg-blue-800) */
+/* Create button hover state */
 .btnCreate:hover {
-    background-color: #1d4ed8;
+  background-color: #1d4ed8;
 }
 
+/* Create button active state */
 .btnCreate:active {
-    background-color: #1e40af;
+  background-color: #1e40af;
 }
 
-/* 활성화된 탭 (Tailwind: text-blue-600 bg-blue-50 rounded-xl) */
-.btnActive {
-    color: #3b82f6;
-    /* text-blue-600 */
-    background-color: #eff6ff;
-    /* bg-blue-50 */
-    border-radius: 12px;
-    /* rounded-xl (대략 0.75rem) */
-}
-
-/* 아이콘 크기 */
+/* Icon styles */
+.iconDefault,
 .iconCreate {
-    width: 2rem;
-    /* w-8 */
-    height: 2rem;
+  background: none;
+  display: block;
 }
 
 .iconDefault {
-    width: 1.75rem;
-    /* w-7 (28px) */
-    height: 1.75rem;
+  width: 1.75rem;
+  height: 1.75rem;
 }
 
-/* 라벨 (Tailwind: text-xs, mt-1, font-medium) */
+.iconCreate {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Label styles */
 .label {
-    font-size: 0.75rem;
-    /* 12px */
-    margin-top: 0.25rem;
-    /* 4px */
-    font-weight: 500;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
 }
 
-/* Create 버튼에는 라벨 숨김 (Tailwind: hidden) */
 .labelHidden {
-    display: none;
+  display: none;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1280px;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
 }

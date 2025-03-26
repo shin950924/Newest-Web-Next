@@ -1,6 +1,6 @@
 // components/LoadingIndicator.tsx
 import React from "react";
-import styles from "../../styles/LoadingIndicator.module.css";
+import styles from "../../../styles/LoadingIndicator.module.css";
 
 const LoadingIndicator: React.FC = () => {
   return (

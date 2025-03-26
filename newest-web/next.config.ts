@@ -5,9 +5,12 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
+        protocol: "http",
+        hostname: "**",
+      }, {
         protocol: "https",
-        hostname: "**", // 모든 호스트네임 허용 (와일드카드)
-      },
+        hostname: "**",
+      }
     ],
   },
 };

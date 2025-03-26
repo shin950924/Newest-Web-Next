@@ -51,12 +51,13 @@ const useEntries = () => {
       }
       offsetRef.current = currentOffset + LIMIT;
       setError(null);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Error fetching entries:', err);
-      setError(err.message || '데이터를 불러오는 데 실패했습니다.');
-    } finally {
-      setLoadingState('idle');
-      isFetchingRef.current = false;
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError('데이터를 불러오는 데 실패했습니다.');
+      }
     }
   }, []);
 

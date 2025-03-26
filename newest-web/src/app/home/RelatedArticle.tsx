@@ -1,27 +1,33 @@
 "use client";
-
-import React, { useState, useCallback, memo } from "react";
-import DownArrow from "@/assets/svg/DownArrow";
-import styles from "../../styles/RelatedArticle.module.css";
+import { Article } from "../../../types";
 import LoadMoreButton from "./LoadMoreButton";
+import DownArrow from "@/assets/svg/DownArrow";
 import RelatedArticleItem from "./RelatedArticleItem";
-
+import styles from "../../styles/RelatedArticle.module.css";
+import React, { useState, useCallback, useMemo, memo } from "react";
 interface RelatedArticleProps {
-  articles: any[];
+  articles: Article[] | undefined;
   time: string;
 }
 
 const RelatedArticle: React.FC<RelatedArticleProps> = memo(
   ({ articles, time }) => {
-    const [visibleCount, setVisibleCount] = useState<number>(3);
     const increment = 3;
+    const [visibleCount, setVisibleCount] = useState<number>(3);
 
     const handleLoadMore = useCallback(() => {
       setVisibleCount((prevCount) => prevCount + increment);
     }, []);
 
-    const visibleArticles = articles?.slice(0, visibleCount);
-    const allArticlesVisible = visibleCount >= (articles?.length || 0);
+    const visibleArticles = useMemo(
+      () => articles?.slice(0, visibleCount),
+      [articles, visibleCount]
+    );
+
+    const allArticlesVisible = useMemo(
+      () => visibleCount >= (articles?.length || 0),
+      [articles, visibleCount]
+    );
 
     return (
       <div className={styles.relatedArticle}>
@@ -44,5 +50,7 @@ const RelatedArticle: React.FC<RelatedArticleProps> = memo(
     );
   }
 );
+
+RelatedArticle.displayName = "RelatedArticle";
 
 export default RelatedArticle;

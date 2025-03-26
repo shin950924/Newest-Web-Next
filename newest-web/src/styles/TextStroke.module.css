@@ -1,0 +1,10 @@
+.textStroke {
+    --stroke-size: 1px;
+    --stroke-color: #fff;
+
+    text-shadow:
+        calc(-1 * var(--stroke-size)) calc(-1 * var(--stroke-size)) 0 var(--stroke-color),
+        var(--stroke-size) calc(-1 * var(--stroke-size)) 0 var(--stroke-color),
+        calc(-1 * var(--stroke-size)) var(--stroke-size) 0 var(--stroke-color),
+        var(--stroke-size) var(--stroke-size) 0 var(--stroke-color);
+}

@@ -1,0 +1,72 @@
+/* GridItem 모듈 스타일 */
+
+.itemContainer {
+    position: relative;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #F3F4F6;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 100%;
+}
+
+.itemContainer:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainer {
+    width: 100%;
+    position: relative;
+    display: block;
+    /* Height and aspect ratio are controlled in component inline styles */
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: opacity 300ms ease;
+}
+
+.imageLoading {
+    opacity: 0;
+}
+
+.imageLoaded {
+    opacity: 1;
+}
+
+.textOverlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 8px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.textStroke {
+    text-shadow: -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;
+    display: inline-block;
+    max-width: 100%;
+    font-weight: 900;
+}
+
+.text {
+    font-size: 23px;
+    font-family: 'Outline', sans-serif;
+    color: #000;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    max-width: 100%;
+}

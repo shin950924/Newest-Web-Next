@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import PublishedTag from "./PublishedTag";
 import { extractDomain } from "@/utils/common";
@@ -15,10 +13,7 @@ interface RelatedArticleItemProps {
   time: string;
 }
 
-const RelatedArticleItem: React.FC<RelatedArticleItemProps> = ({
-  item,
-  time,
-}) => {
+const RelatedArticleItem: React.FC<RelatedArticleItemProps> = ({ item }) => {
   const handleClick = () => {
     if (!item.links) return;
     window.open(item.links, "_blank");

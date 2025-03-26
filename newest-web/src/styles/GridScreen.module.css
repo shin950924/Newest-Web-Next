@@ -1,0 +1,35 @@
+/* GridScreen 모듈 스타일 */
+.gridContainer {
+    margin: 0 auto;
+    padding: 0 5px;
+    max-width: 980px;
+    min-Height: 100vh;
+}
+
+.masonryGrid {
+    display: flex;
+    width: auto;
+    margin-left: -10px;
+    /* gutter 간격 */
+}
+
+.masonryGridColumn {
+    padding-left: 10px;
+    /* gutter 간격 */
+    background-clip: padding-box;
+    width: 50% !important;
+    /* 항상 2열 유지 */
+}
+
+.masonryGridColumn>div {
+    margin-bottom: 10px;
+    /* 아이템 간 세로 간격 */
+    width: 100%;
+}
+
+.loadingMoreContainer {
+    width: 100%;
+    text-align: center;
+    margin-top: 16px;
+    padding-bottom: 20px;
+}

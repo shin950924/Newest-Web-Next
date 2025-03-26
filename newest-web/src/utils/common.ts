@@ -1,5 +1,5 @@
 
-export const keyExtractor = (item: any, index: number): string => {
+export const keyExtractor = (index: number): string => {
     return index.toString();
 };
 
@@ -91,7 +91,11 @@ export const formatISODateToLongDate = (isoDateString: string): string => {
     return date.toLocaleDateString(undefined, options);
 }
 
-export function extractDomain(url: string): string | null {
-    const match = url.match(/https?:\/\/(?:www\.)?([^\/]+)/);
-    return match ? match[1] : null;
+export function extractDomain(url?: string): string | null {
+  if (!url) {
+    return null;
+  }
+  
+  const match = url.match(/https?:\/\/(?:www\.)?([^\/]+)/);
+  return match ? match[1] : null;
 }
