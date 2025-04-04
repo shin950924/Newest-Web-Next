@@ -1,5 +1,5 @@
 // src/services/loginService.t
-import apiClient from "./apiClient";
+import apiClient from "../api/apiClient";
 import { oneTimeTokenProps, UserApiProps } from "../../../types";
 
 export const postLogin = async (phoneNumber: string):Promise<oneTimeTokenProps> => {
