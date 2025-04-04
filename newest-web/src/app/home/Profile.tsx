@@ -32,12 +32,9 @@ const Profile: React.FC<ProfileProps> = ({ item, image }) => {
             alt="Profile"
             width={40}
             height={40}
-            style={{
-              borderRadius: "50%",
-              backgroundColor: image ? "green" : "#fff",
-              border: image ? undefined : "1px solid #F3E8FF",
-              objectFit: image ? undefined : "contain",
-            }}
+            className={
+              image ? styles.profileImageWithBg : styles.profileImageDefault
+            }
           />
         </div>
         <div style={{ marginLeft: 8 }}>

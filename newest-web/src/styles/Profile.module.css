@@ -20,6 +20,23 @@
     justify-content: center;
 }
 
+/* 이미지 스타일 클래스 추가 */
+.profileImage {
+    border-radius: 50%;
+}
+
+.profileImageDefault {
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #F3E8FF;
+    object-fit: contain;
+}
+
+.profileImageWithBg {
+    border-radius: 50%;
+    background-color: green;
+}
+
 .nameRow {
     display: flex;
     align-items: center;

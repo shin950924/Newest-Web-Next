@@ -33,7 +33,7 @@ const HomePagePresenter: React.FC<HomePagePresenterProps> = ({
         />
       );
     },
-    [foldedStateMap, onToggleFold]
+    [foldedStateMap, onToggleFold, sentinelRef]
   );
 
   return (

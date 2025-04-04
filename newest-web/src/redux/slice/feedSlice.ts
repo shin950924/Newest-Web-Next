@@ -5,6 +5,7 @@ import { HYDRATE } from "next-redux-wrapper";
 // Use Feeds[] for an array of feed items.
 interface feedState {
   feeds: Feeds[];
+  selectFeed: Feeds | undefined
 }
 
 function isHydrateAction(
@@ -13,7 +14,7 @@ function isHydrateAction(
   return action.type === HYDRATE;
 }
 
-const initialState: feedState = { feeds: [] };
+const initialState: feedState = { feeds: [], selectFeed: undefined };
 
 const feedSlice = createSlice({
   name: "feed",
@@ -21,6 +22,9 @@ const feedSlice = createSlice({
   reducers: {
     setFeed: (state, action: PayloadAction<Feeds[]>) => {
       state.feeds = action.payload;
+    },
+    setSelectFeed: (state, action: PayloadAction<Feeds>) => {
+      state.selectFeed = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -36,7 +40,6 @@ const feedSlice = createSlice({
   },
 });
 
-export const { setFeed } = feedSlice.actions;
-// Update the selector to match the state shape.
+export const { setFeed, setSelectFeed } = feedSlice.actions;
 export const feeds = (state: { feed: feedState }) => state.feed.feeds;
 export default feedSlice.reducer;

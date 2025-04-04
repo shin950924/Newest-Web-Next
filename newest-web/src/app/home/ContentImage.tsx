@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useState, memo } from "react";
-import NoImage from "../../assets/NoImage.png";
+import NoImage from "../../assets/NoImage.webp";
 import { ContentImageProps } from "../../../types";
 import styles from "../../styles/ContentImage.module.css";
 

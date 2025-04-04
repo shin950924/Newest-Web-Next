@@ -13,7 +13,7 @@
 
 .contentContainer {
     padding: 16px;
-    background-color: '#000';
+    background-color: #fff;
 }
 
 .openBrowser {
@@ -21,4 +21,15 @@
     border: none;
     cursor: pointer;
     margin: 16px 25px;
+}
+
+.singleFeed {
+    max-width: 800px;
+    margin: 0 13px 90px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }

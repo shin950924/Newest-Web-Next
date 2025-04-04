@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.imageWrapper {
+    cursor: pointer;
+}

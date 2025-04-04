@@ -1,0 +1,18 @@
+.masonryGrid {
+  display: flex;
+  margin-left: 5px;
+  width: auto;
+}
+
+.masonryGridcolumn {
+  padding-left: 5px;
+  background-clip: padding-box;
+}
+
+.masonryGridcolumn > * {
+  margin-bottom: 5px;
+}
+
+.profileRssContainer {
+  width: 100%;
+}

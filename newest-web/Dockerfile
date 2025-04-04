@@ -1,6 +1,7 @@
 # 의존성 설치용 스테이지
 FROM node:20-alpine AS deps
 WORKDIR /app
+
 COPY package.json package-lock.json ./
 RUN npm ci
 
@@ -15,6 +16,7 @@ RUN npm run build
 FROM node:20-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
+ENV NEXTAUTH_SECRET="Duq471ukc6Uxa2G2tIcMFzZhrX00i5wJWB7air4DnD8="
 
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev

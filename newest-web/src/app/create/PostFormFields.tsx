@@ -1,7 +1,7 @@
 import React from "react";
 import { PostImage } from "./PostImage";
 import styles from "@/styles/Post.module.css";
-import { FormFieldsProps } from "../../../../types";
+import { FormFieldsProps } from "../../../types";
 
 export const PostFormFields = ({
   formData,

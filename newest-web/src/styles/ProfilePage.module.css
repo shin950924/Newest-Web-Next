@@ -1,0 +1,31 @@
+.profilePage {
+  margin: 0 auto 90px;
+}
+
+.tabPage{
+  padding: 0 13px;
+  max-width: 940px;
+  margin: 0 auto
+}
+
+.tabsWrapper {
+  width: 100%;
+  border-color: black;
+  border-bottom-width: 1;
+}
+
+.tabsContainer {
+  height: 55px;
+}
+
+.tabsContainer .MuiTabs-flexContainer {
+  height: 100%;
+}
+
+.tabsContainer .MuiTab-root {
+  min-height: 55px;
+}
+
+.tabPanelContent {
+  padding: 0;
+}

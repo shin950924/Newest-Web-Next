@@ -119,6 +119,85 @@ export interface scrollContainerRefType {
   scrollContainerRef: React.RefObject<HTMLDivElement | null>;
 }
 
+export interface RegisterUser {
+  user_id: string,
+  username: string,
+  phone_number: string
+}
+
+export interface Token{
+  access_token: string|undefined,
+  refresh_token: string|undefined
+}
+
+export interface ProfileTabViewProps {
+    user_id:          string;
+    profile_picture?: string;
+    bio?:             string;
+    is_following:    boolean;
+}
+
+export interface ProfileCommentCardProps {
+  name: string;
+  badge: string;
+  time: string;
+  comment_content: string;
+  commenter_profile_image?: string | null;
+}
+export interface ProfileCommentsReply{
+  commenter_profile_image: null| string,
+  commenter_name: string,
+  comment_date: string,
+  comment_content: string
+  entry: Feeds,
+}
+
+export interface ProfileCommentsType{
+  commenter_profile_image: null| string,
+  commenter_name: string,
+  comment_date: string,
+  comment_content: string
+  entry: Feeds,
+  description: string,
+  replies: ProfileCommentsReply
+}
+
+export interface ProfileCommentItemProps {
+  item: ProfileCommentsType;
+}
+
+export interface GridItemProps {
+  data: Feeds;
+  isTextOverlay?: boolean;
+  source?: string;
+}
+export interface FeedGridItemProps {
+  item: Feeds;
+}
+
+export interface oneTimeTokenProps{
+  "one_time_token": string | undefined
+}
+
+export interface UserApiProps {
+  is_member: boolean
+  user_id: string|undefined,
+  token: Token
+}
+
+export interface VerificationCodeInputProps {
+  onComplete: (code: string) => void;
+  resendCode: () => void;
+}
+
+export interface User {
+  id: string;
+  user_id: string;
+  is_member: boolean;
+  accessToken: string;
+  refreshToken: string;
+}
+
 export type AppDispatch = AppStore['dispatch'];
 export type AppStore = ReturnType<typeof makeStore>;
 export type RootState = ReturnType<typeof combinedReducer>;

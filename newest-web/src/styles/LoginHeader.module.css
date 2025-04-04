@@ -1,0 +1,28 @@
+.container {
+    height: 48px;
+    border-bottom: 1px solid #E5E7EB;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.placeholder {
+    flex: 1;
+}

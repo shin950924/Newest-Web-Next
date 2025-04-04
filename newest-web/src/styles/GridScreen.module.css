@@ -1,6 +1,6 @@
 /* GridScreen 모듈 스타일 */
 .gridContainer {
-    margin: 0 auto;
+    margin: 0 auto 90px;
     padding: 0 5px;
     max-width: 980px;
     min-Height: 100vh;

@@ -34,7 +34,15 @@ const Header: React.FC<HeaderProps> = ({ leftArrow = false }) => {
           />
         )}
         <GradientText>
-          <div className={font.className}>Newest</div>
+          <div
+            className={font.className}
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              router.replace("/home");
+            }}
+          >
+            Newest
+          </div>
         </GradientText>
       </div>
     </div>

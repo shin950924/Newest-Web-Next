@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { SubmitButtonProps } from "../../../../types";
-import styles from "../../../styles/PostSubmitButton.module.css";
+import { SubmitButtonProps } from "../../../types";
+import styles from "../../styles/PostSubmitButton.module.css";
 import { handlePublish, handlePublishNews } from "@/app/service/postService";
 
 const PostSubmitButton = ({ form }: SubmitButtonProps) => {

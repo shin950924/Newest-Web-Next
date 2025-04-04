@@ -1,0 +1,98 @@
+.safeArea {
+    display: flex;
+    margin: 0 auto;
+    max-width: 980px;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.container {
+    flex: 1;
+    padding: 20px;
+    padding-top: 32px;
+    background-color: #fff;
+}
+
+.signupTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.signupSubtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+.phoneInputContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.phoneInput {
+    flex: 1;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 8px;
+    padding: 0 12px;
+    font-size: 16px;
+    height: 48px;
+    color: #000;
+}
+
+.termsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.checkboxButton {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.termsText {
+  flex: 1;
+  display: flex;
+  color: #555;
+  font-size: 14px;
+  margin-left: 8px;
+  word-wrap: break-word;
+  flex-direction: row;
+  align-items: center;
+}
+
+.linkText {
+    color: #2563EB;
+    cursor: pointer;
+}
+
+.continueButton {
+    background-color: #2563EB;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.continueButtonText {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.buttonDisabled {
+    background-color: #60A5FA;
+    cursor: not-allowed;
+}

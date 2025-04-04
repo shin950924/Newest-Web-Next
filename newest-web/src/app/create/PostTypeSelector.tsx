@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "../../../styles/Post.module.css";
-import { PostTypeSelectorProps } from "../../../../types";
 import { Newspaper, Type } from "lucide-react";
+import styles from "../../styles/Post.module.css";
+import { PostTypeSelectorProps } from "../../../types";
 
 export const PostTypeSelector = ({
   postType,
