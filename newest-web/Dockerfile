@@ -33,4 +33,4 @@ COPY --from=builder /app/pm2.config.js ./pm2.config.js
 EXPOSE 3000
 
 # PM2로 실행
-CMD ["pm2-runtime", "pm2.config.js"]
+CMD ["pm2-runtime", "start", "pm2.config.js"]
