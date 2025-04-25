@@ -1,6 +1,7 @@
 // src/services/loginService.t
 import apiClient from "../api/apiClient";
 import { oneTimeTokenProps, UserApiProps } from "../../../types";
+export const phoneRegex = /^01[016789]-?\d{3,4}-?\d{4}$/;
 
 export const postLogin = async (phoneNumber: string):Promise<oneTimeTokenProps> => {
     const response = await apiClient.post('/send_sms_verification', { "phone_number": phoneNumber });

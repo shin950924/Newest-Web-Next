@@ -1,0 +1,2 @@
+2025/04/15 15:30:03 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:78
+2025/04/22 14:55:26 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:78

@@ -4,7 +4,7 @@ import Header from "../home/Header";
 import { useRouter } from "next/navigation";
 import styles from "../../styles/Login.module.css";
 import { oneTimeTokenProps } from "../../../types";
-import { postLogin } from "../service/loginService";
+import { phoneRegex, postLogin } from "../service/loginService";
 import React, { useState, useCallback } from "react";
 import CustomText from "../component/common/CustomText";
 import BottomTabBar from "../component/common/BottomTabBar";
@@ -20,13 +20,21 @@ const Login: React.FC = () => {
 
   const handleContinue = useCallback(async () => {
     try {
+      if (!acceptedTerms) {
+        window.alert("서비스 이용약관을 동의해주세요");
+        return;
+      }
+      if (!phoneRegex.test(phone)) {
+        window.alert("올바른 휴대폰 번호를 입력해주세요");
+        return;
+      }
       const token: oneTimeTokenProps = await postLogin(phone);
       const data = JSON.stringify({ phone, token: token.one_time_token });
       router.push(`/signUpCode?data=${encodeURIComponent(data)}`);
     } catch (error) {
       console.error("로그인 실패:", error);
     }
-  }, [phone, router]);
+  }, [phone, router, acceptedTerms]);
 
   const isContinueDisabled = !validatePhone(phone) || !acceptedTerms;
 

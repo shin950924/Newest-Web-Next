@@ -75,12 +75,7 @@ export const uploadPost = async (formData: FormData) => {
 
 export const uploadNews = async (title: string) => {
   try {
-    const token = getToken();
-    const response = await apiClient.post('/article', { title }, {
-      headers: {
-        'token': token,
-      },
-    });
+    const response = await apiClient.post('/article', { title:title });
     return response.data;
   } catch (error) {
     console.error('Upload error:', error);
@@ -90,17 +85,22 @@ export const uploadNews = async (title: string) => {
 
 export const deletePost = async (post_id: number) => {
   try {
-    const token = getToken();
-    const response = await apiClient.delete(`/post/${post_id}`, {
-      headers: {
-        'token': token,
-      },
-    });
+    const response = await apiClient.delete(`/post/${post_id}`);
     return response.data;
   } catch (error) {
     console.error('Delete error:', error);
     throw error;
   }
+};
+
+export const postLike = async ( post_id: number | undefined) => {
+  const response = await apiClient.post('/' + post_id + '/like');
+  return response.data;
+};
+
+export const articleLike = async ( post_id: number | undefined) => {
+  const response = await apiClient.post('/article/' + post_id + '/like');
+  return response.data;
 };
 
 export const usePostService = () => {

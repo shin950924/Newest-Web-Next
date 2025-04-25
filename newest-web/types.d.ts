@@ -61,6 +61,7 @@ export interface MenuItemProps {
   count: number | string;
   label: string;
   isCount: boolean;
+  onPress:()=>void
 }
 
 export interface HomePagePresenterProps {

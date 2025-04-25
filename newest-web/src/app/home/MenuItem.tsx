@@ -3,9 +3,9 @@ import { MenuItemProps } from "../../../types";
 import styles from "../../styles/MenuItem.module.css";
 
 const MenuItem: React.FC<MenuItemProps> = memo(
-  ({ icon, count, label, isCount }) => {
+  ({ icon, count, label, isCount, onPress }) => {
     return (
-      <button className={styles.menuItem} onClick={() => {}} aria-label={label}>
+      <button className={styles.menuItem} onClick={onPress} aria-label={label}>
         {icon}
         {isCount && <span className={styles.countText}>{count}</span>}
       </button>
