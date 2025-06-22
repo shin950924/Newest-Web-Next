@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     siteName: "MyApp",
     images: [
       {
-        url: "/001.png",
+        url: "/images/001.png",
         width: 1200,
         height: 630,
         alt: "Newest - 실시간 급상승 검색어",
