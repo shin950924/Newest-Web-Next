@@ -131,3 +131,9 @@
 // };
 
 // export default ProfilePage;
+
+const ProfilePage = () => {
+  return <div />;
+};
+
+export default ProfilePage;
