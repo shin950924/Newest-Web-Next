@@ -13,11 +13,11 @@ interface MenuBarProps {
 
 const MenuBar: React.FC<MenuBarProps> = ({ data }) => {
   const handleLike = () => {
-    window.alert("좋아요 기능은 앱에서 이용해 주세요.");
+    window.location.href = "https://bngjt.app.link/HvHwIruAoUb";
   };
 
   const handleComment = () => {
-    window.alert("댓글 작성과 열람은 앱에서 이용해 주세요.");
+    window.location.href = "https://bngjt.app.link/HvHwIruAoUb";
   };
   return (
     <div className={styles.menuBar}>
