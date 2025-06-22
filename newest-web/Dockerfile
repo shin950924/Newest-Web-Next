@@ -27,6 +27,7 @@ RUN npm ci --omit=dev
 # 필수 빌드 결과물 및 정적 파일 복사
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
+COPY --from=builder /app/next.config.ts ./
 COPY --from=builder /app/pm2.config.js ./pm2.config.js
 
 EXPOSE 3000
