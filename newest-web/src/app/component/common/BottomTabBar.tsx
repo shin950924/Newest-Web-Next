@@ -10,9 +10,7 @@ import styles from "../../../styles/BottomTabBar.module.css";
 
 const TABS: readonly Tab[] = [
   { icon: Home, label: "Home", id: "" },
-  { icon: LayoutGrid, label: "Grid", id: "grid" },
-  { icon: Hash, label: "Create", id: "create" },
-  { icon: User, label: "Profile", id: "profile" },
+  { icon: LayoutGrid, label: "Grid", id: "grid" }
 ];
 
 const BottomTabBar = memo(() => {
