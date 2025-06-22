@@ -1,16 +1,16 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { Home, LayoutGrid } from "lucide-react";
 import { RootState, Tab } from "../../../../types";
 import { setIndex } from "@/redux/slice/tabsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import TabButton from "@/app/component/common/TabButton";
 import React, { memo, useMemo, useCallback } from "react";
-import { Home, LayoutGrid, User, Hash } from "lucide-react";
 import styles from "../../../styles/BottomTabBar.module.css";
 
 const TABS: readonly Tab[] = [
   { icon: Home, label: "Home", id: "" },
-  { icon: LayoutGrid, label: "Grid", id: "grid" }
+  { icon: LayoutGrid, label: "Grid", id: "grid" },
 ];
 
 const BottomTabBar = memo(() => {
