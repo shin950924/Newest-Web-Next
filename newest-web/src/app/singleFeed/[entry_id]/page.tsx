@@ -12,7 +12,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const resolvedParams = await params;
   const id = resolvedParams.entry_id;
-  const res = await fetch(`${BASE_URL}?entry_id=${id}`, { cache: "no-store" });
+  const res = await fetch(`${BASE_URL}/entry_detail?entry_id=${id}`, {
+    cache: "no-store",
+  });
   if (!res.ok) {
     return { title: "Feed Not Found" };
   }
