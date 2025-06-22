@@ -20,7 +20,7 @@ export async function generateMetadata({
   }
   const item: FeedItem = await res.json();
   const primary = item.articles[0] ?? null;
-  const secondary = item.articles[1]?.images || item.media_urls[0] || "";
+  const secondary = item.articles[0]?.images ?? null;
   const title = item.description || primary?.titles || item.rss_title || "";
 
   return {
@@ -31,7 +31,9 @@ export async function generateMetadata({
       title,
       description: item.description || item.rss_title,
       url: `https://www.shin1995seoul.com/singleFeed/${id}`,
-      images: secondary ? [secondary] : [],
+      images: secondary
+        ? [secondary]
+        : ["https://www.shin1995seoul.com/images/001.png"],
     },
     twitter: {
       card: "summary_large_image",

@@ -58,10 +58,9 @@ const SingleFeedPageContainer: React.FC<SingleFeedPageContainerProps> = memo(
       return null;
     }
 
-    const { articles, media_urls, description, rss_title, created_at, type } =
-      item;
+    const { articles, description, rss_title, created_at, type } = item;
     const primary = articles[0] || null;
-    const secondary = articles[1]?.images || media_urls[0] || null;
+    const secondary = articles[1]?.images || "/images/001.png";
     const title = description || primary?.titles || rss_title;
     const imageUri = primary?.images || secondary;
 
