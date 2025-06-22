@@ -6,6 +6,7 @@ import RelatedArticle from "./RelatedArticle";
 import { FeedItemProps } from "../../../types";
 import styles from "../../styles/FeedItem.module.css";
 import React, { memo, useMemo, useCallback } from "react";
+import WarningScreen from "../component/common/WarningScreen";
 
 const FeedItem: React.FC<FeedItemProps> = ({
   item,
@@ -57,6 +58,7 @@ const FeedItem: React.FC<FeedItemProps> = ({
       </div>
       {(!isFoldable || !isFold) && (
         <div className={styles.contentContainer}>
+          <WarningScreen />
           <Content title={title ?? ""} />
           <ContentImage uri={secondaryArticle} />
           {item.type === "news" && (

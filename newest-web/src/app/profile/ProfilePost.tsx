@@ -8,8 +8,6 @@ import ProfileNoItem from "./ProfileNoItem";
 import { useWindowSize } from "../hooks/useWindowSize";
 import { getProfilePost } from "../service/userService";
 import styles from "../../styles/ProfilePost.module.css";
-import { useDispatch } from "react-redux";
-import { setSelectFeed } from "@/redux/slice/feedSlice";
 
 interface ProfilePostProps {
   userId: string;
@@ -50,7 +48,6 @@ const ProfilePostItem = React.memo(ProfilePostItemComponent);
 
 const ProfilePost: React.FC<ProfilePostProps> = ({ userId }) => {
   const router = useRouter();
-  const dispatch = useDispatch();
   const windowSize = useWindowSize();
   const [data, setData] = useState<Feeds[]>([]);
 
@@ -75,10 +72,10 @@ const ProfilePost: React.FC<ProfilePostProps> = ({ userId }) => {
 
   const handlePress = useCallback(
     (item: Feeds) => {
-      router.push("/singleFeed");
-      dispatch(setSelectFeed(item));
+      console.log(item);
+      router.push("/singleFeed/" + item.entry_id);
     },
-    [router, dispatch]
+    [router]
   );
 
   const renderedPosts = useMemo(

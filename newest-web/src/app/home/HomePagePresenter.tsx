@@ -2,7 +2,10 @@ import Header from "./Header";
 import FeedItem from "./FeedItem";
 import React, { memo, useCallback } from "react";
 import styles from "../../styles/Home.module.css";
-import { Feeds, HomePagePresenterProps } from "../../../types";
+import {
+  FeedItem as FeedItemType,
+  HomePagePresenterProps,
+} from "../../../types";
 import LoadingIndicator from "../component/common/LoadingIndicator";
 
 const HomePagePresenter: React.FC<HomePagePresenterProps> = ({
@@ -14,8 +17,8 @@ const HomePagePresenter: React.FC<HomePagePresenterProps> = ({
   onToggleFold,
 }) => {
   const renderFeedItem = useCallback(
-    (feed: Feeds, index: number) => {
-      const feedId = feed.entry_id ? `E${feed.entry_id}` : `P${feed.post_id}`;
+    (feed: FeedItemType, index: number) => {
+      const feedId = feed.entry_id ? `E${feed.entry_id}` : `P${index}`;
       const isFolded = foldedStateMap[feedId] ?? true;
 
       const handleToggleFold = () => {

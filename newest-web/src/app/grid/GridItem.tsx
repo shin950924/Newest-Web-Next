@@ -6,8 +6,6 @@ import { GridItemProps } from "../../../types";
 import NoImage from "../../assets/NoImage.webp";
 import styles from "../../styles/GridItem.module.css";
 import React, { memo, useState, useEffect, useCallback, useMemo } from "react";
-import { useDispatch } from "react-redux";
-import { setSelectFeed } from "@/redux/slice/feedSlice";
 
 const DEFAULT_HEIGHT = 150;
 const aspectRatioCache = new Map<string, number>();
@@ -15,7 +13,6 @@ const aspectRatioCache = new Map<string, number>();
 const GridItem: React.FC<GridItemProps> = memo(
   ({ data, source, isTextOverlay = false }) => {
     const router = useRouter();
-    const dispatch = useDispatch();
     const imgSrc = source || NoImage;
     const [ratio, setRatio] = useState(1);
     const [imageLoaded, setImageLoaded] = useState(false);
@@ -44,9 +41,8 @@ const GridItem: React.FC<GridItemProps> = memo(
     }, [source]);
 
     const handlePress = useCallback(() => {
-      router.push("/singleFeed");
-      dispatch(setSelectFeed(data));
-    }, [data, router, dispatch]);
+      router.push("/singleFeed/" + data.entry_id);
+    }, [data, router]);
 
     const imageContainerStyle: React.CSSProperties = useMemo(
       () => ({

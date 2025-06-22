@@ -2,14 +2,13 @@
 import React from "react";
 import MenuItem from "./MenuItem";
 import Heart from "@/assets/svg/Heart";
-import { Feeds } from "../../../types";
 import Person from "@/assets/svg/Person";
+import { FeedItem } from "../../../types";
 import Comment from "@/assets/svg/Comment";
 import { formatNumberString } from "@/utils/common";
 import styles from "../../styles/MenuBar.module.css";
-
 interface MenuBarProps {
-  data: Feeds;
+  data: FeedItem;
 }
 
 const MenuBar: React.FC<MenuBarProps> = ({ data }) => {

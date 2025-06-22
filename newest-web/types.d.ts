@@ -33,14 +33,14 @@ export interface ContentProps {
 }
 
 export interface ContentImageProps {
-  uri?: string;
+  uri?: string | undefined | null;
   width?: number;
   height?: number;
   borderRadius?: number;
 }
 
 export interface FeedItemProps {
-  item: Feeds;
+  item: FeedItem;
   isFold: boolean;
   isFoldable: boolean;
   onToggleFold: () => void;
@@ -65,7 +65,7 @@ export interface MenuItemProps {
 }
 
 export interface HomePagePresenterProps {
-  feedList: Feeds[];
+  feedList: FeedItem[];
   foldedStateMap: { [key: string]: boolean };
   isLoading: boolean;
   isLoadingMore: boolean;
@@ -74,10 +74,10 @@ export interface HomePagePresenterProps {
 }
 
 export interface HomePageContainerType {
-  initialFeeds: Feeds[];
+  initialFeeds: FeedItem[];
 }
 export interface FeedStateType {
-  list: Feeds[];
+  list: FeedItem[];
   isLoading: boolean;
   isLoadingMore: boolean;
 }
@@ -198,6 +198,23 @@ export interface User {
   accessToken: string;
   refreshToken: string;
 }
+
+export interface FeedItem {
+  type: string;
+  entry_id: number;
+  description: string;
+  rss_title: string;
+  created_at: string;
+  traffic: string;
+  tag: string;
+  author: string;
+  articles: Article[];
+  like_count: number;
+  comment_count: number;
+  is_liked: boolean;
+  media_urls: string[];
+}
+
 
 export type AppDispatch = AppStore['dispatch'];
 export type AppStore = ReturnType<typeof makeStore>;

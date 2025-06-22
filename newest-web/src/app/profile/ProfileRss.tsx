@@ -52,7 +52,7 @@ const ProfileRss: FC<ProfileRssProps> = memo(({ userId }) => {
     setOffset(0);
     setRssItems([]);
     fetchRss();
-  }, []);
+  }, [fetchRss]);
 
   useEffect(() => {
     if (observer.current) {

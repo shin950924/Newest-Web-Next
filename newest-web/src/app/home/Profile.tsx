@@ -1,16 +1,16 @@
 import Image from "next/image";
 import React, { memo } from "react";
-import { Feeds } from "../../../types";
-import PublishedTag from "./PublishedTag";
 import Logo from "../../assets/Logo.png";
+import PublishedTag from "./PublishedTag";
+import { FeedItem } from "../../../types";
 import ProfileClock from "@/assets/svg/ProfileClock";
 import styles from "../../styles/Profile.module.css";
 import { extractDomain, timeDiff } from "@/utils/common";
 import ProfileIncreaseArrow from "@/assets/svg/ProfileIncreaseArrow";
 
 interface ProfileProps {
-  item: Feeds;
-  image?: string;
+  item: FeedItem;
+  image?: string | undefined | null;
 }
 
 const Profile: React.FC<ProfileProps> = ({ item, image }) => {
@@ -19,7 +19,7 @@ const Profile: React.FC<ProfileProps> = ({ item, image }) => {
       ? item.articles?.[0]?.source_names ||
         extractDomain(item.articles?.[0]?.links) ||
         "기사없음"
-      : item.user_id;
+      : item.rss_title;
 
   const createdAt = item.created_at || new Date().toISOString();
 
@@ -40,7 +40,7 @@ const Profile: React.FC<ProfileProps> = ({ item, image }) => {
         <div style={{ marginLeft: 8 }}>
           <div className={styles.infoRow}>
             <div className={styles.nameText}>
-              {item.rss_title || item.title}
+              {item.rss_title || item.rss_title}
             </div>
             <ProfileIncreaseArrow />
             <PublishedTag tag={tag} />
