@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getEntries } from "@/app/service/entriesService";
 import BottomTabBar from "../component/common/BottomTabBar";
 import React, { useEffect, useRef, useState, useCallback } from "react";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "@/lib/firebase";
 
 const ITEMS_PER_PAGE = 10;
 
@@ -19,8 +21,13 @@ export default function HomePageContainer() {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const feeds = useSelector((state: RootState) => state.feeds.feeds);
   const [foldedStateMap, setFoldedStateMap] = useState<FoldedStateMapType>({});
-
+  const sendEvent = async () => {
+    await logEvent(analytics, "page_view", {
+      page_location: window.location.href,
+    });
+  };
   useEffect(() => {
+    sendEvent();
     const loadInitialData = async () => {
       try {
         setIsLoading(true);
