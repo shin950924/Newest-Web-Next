@@ -10,8 +10,6 @@ import styles from "../../styles/GridScreen.module.css";
 import React, { useRef, useEffect, useCallback } from "react";
 import LoadingIndicator from "../component/common/LoadingIndicator";
 import BottomTabBar from "../component/common/BottomTabBar";
-import { logEvent } from "firebase/analytics";
-import { analytics } from "@/lib/firebase";
 
 const GridScreen: React.FC = () => {
   const dispatch = useDispatch();
@@ -21,15 +19,6 @@ const GridScreen: React.FC = () => {
 
   const isLoading = loadingState === "loading";
   const isLoadingMore = loadingState === "loadingMore";
-  const sendEvent = async () => {
-    await logEvent(analytics, "page_view", {
-      page_location: window.location.href,
-    });
-  };
-
-  useEffect(() => {
-    sendEvent();
-  }, []);
 
   const loadInitialData = useCallback(async () => {
     const response = await getEntries(10, 0);

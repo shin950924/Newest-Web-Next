@@ -1,6 +1,6 @@
 // src/lib/firebase.ts
 import { initializeApp} from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { Analytics, getAnalytics, isSupported } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -12,8 +12,9 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENTID,
 };
 
-
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
-export { app, analytics };
+export const analyticsPromise: Promise<Analytics | null> =
+  isSupported()
+    .then((supported) => (supported ? getAnalytics(app) : null))
+    .catch(() => null);
