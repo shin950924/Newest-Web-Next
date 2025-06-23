@@ -23,10 +23,8 @@ export async function generateMetadata({
   const item: FeedItem = await res.json();
   const primaryArticle = item.articles[0];
 
-  const title =
-    item.description || primaryArticle?.titles || item.rss_title || "Newest";
-  const description =
-    item.description || item.rss_title || "Newest! - 피드를 확인하세요!";
+  const title = item.rss_title || "Newest";
+  const description = item.description || "Newest! - 피드를 확인하세요!";
 
   const imageUrl =
     primaryArticle?.images || "https://www.shin1995seoul.com/images/001.png";
