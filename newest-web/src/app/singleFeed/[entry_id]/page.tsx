@@ -4,7 +4,6 @@ import { FeedItem } from "../../../../types";
 import { BASE_URL } from "@/app/api/apiClient";
 import SingleFeedPageContainer from "./SingleFeedPageContainer";
 
-// OG 메타 생성
 export async function generateMetadata({
   params,
 }: {
@@ -12,31 +11,53 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const resolvedParams = await params;
   const id = resolvedParams.entry_id;
+
   const res = await fetch(`${BASE_URL}/entry_detail?entry_id=${id}`, {
     cache: "no-store",
   });
+
   if (!res.ok) {
     return { title: "Feed Not Found" };
   }
+
   const item: FeedItem = await res.json();
-  const primary = item.articles[0] ?? null;
-  const secondary = item.articles[0]?.images ?? null;
-  const title = item.description || primary?.titles || item.rss_title || "";
+  const primaryArticle = item.articles[0];
+
+  const title =
+    item.description || primaryArticle?.titles || item.rss_title || "Newest";
+  const description =
+    item.description || item.rss_title || "Newest! - 피드를 확인하세요!";
+
+  const imageUrl =
+    primaryArticle?.images || "https://www.shin1995seoul.com/images/001.png";
 
   return {
     title,
-    description: item.description || item.rss_title,
+    description,
     openGraph: {
       type: "article",
       title,
-      description: item.description || item.rss_title,
+      description,
       url: `https://www.shin1995seoul.com/singleFeed/${id}`,
-      images: secondary
-        ? [secondary]
-        : ["https://www.shin1995seoul.com/images/001.png"],
+      siteName: "Newest",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
+      title,
+      description,
+      images: [imageUrl],
+    },
+    icons: {
+      icon: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
     },
   };
 }
