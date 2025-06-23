@@ -9,13 +9,13 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-COPY env.local .
+COPY .env.local ./
 RUN npm run build
 
 # 3. 프로덕션 스테이지
 FROM node:20-alpine AS runner
 WORKDIR /app
-COPY env.local .
+COPY .env.local ./
 ENV NODE_ENV=production
 ENV NEXTAUTH_SECRET="Duq471ukc6Uxa2G2tIcMFzZhrX00i5wJWB7air4DnD8="
 
